@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkrjqw23k1eef"]
+
+[ext_resource type="PackedScene" uid="uid://dq7ybxic6wbtn" path="res://models/props/block-grass-corner-overhang-low.glb" id="1_bgx6d"]
+
+[node name="block-grass-corner-overhang-low2" instance=ExtResource("1_bgx6d")]
