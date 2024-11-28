@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://e6jwbml72r4o"]
+[gd_scene load_steps=36 format=3 uid="uid://e6jwbml72r4o"]
 
 [ext_resource type="Environment" uid="uid://bqnqgflivjvue" path="res://scenes/main-environment.tres" id="1_apxki"]
 [ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_hgw2l"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cnymdajj1vsqm" path="res://objects/platform.tscn" id="16_82380"]
 [ext_resource type="PackedScene" uid="uid://rjh4ifidqrfp" path="res://objects/platform_medium.tscn" id="17_qgsha"]
 [ext_resource type="PackedScene" uid="uid://c8up71en5djgm" path="res://objects/platform_falling.tscn" id="18_x8jhr"]
+[ext_resource type="PackedScene" uid="uid://biyd6x403gvny" path="res://models/core_models/platform-falling.glb" id="19_gahlw"]
 [ext_resource type="PackedScene" uid="uid://uqr4hswv6d2g" path="res://objects/platform_grass_large_round.tscn" id="19_qait6"]
 [ext_resource type="PackedScene" uid="uid://dfpisimsgf5ce" path="res://objects/coin.tscn" id="20_lfsn4"]
 [ext_resource type="PackedScene" uid="uid://dy017k58p20sk" path="res://objects/cloud.tscn" id="21_dryjk"]
@@ -60,6 +61,7 @@ shadow_color = Color(0, 0, 0, 0.376471)
 shadow_offset = Vector2(2, 2)
 
 [node name="Main" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0851936, 0.0391998, -0.0201683)
 
 [node name="Environment" type="WorldEnvironment" parent="."]
 unique_name_in_owner = true
@@ -84,7 +86,7 @@ fov = 40.0
 [node name="World" type="Node3D" parent="."]
 
 [node name="platform-moving" parent="World" instance=ExtResource("4_5ex8m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.3549, -5.09605, 13.2226)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.03481, 1.07504, 8.87956)
 
 [node name="platform-large" parent="World" instance=ExtResource("5_ly2vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.128, 2.11817, 19.6849)
@@ -93,6 +95,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.128, 2.11817, 19.6849)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.7371, 2.20127, -4.15811)
 
 [node name="moving_object_path" parent="World" node_paths=PackedStringArray("object_to_move") instance=ExtResource("6_fuduw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0851936, -0.0391998, 0.0201683)
 curve = SubResource("Curve3D_5n82a")
 object_to_move = NodePath("../platform-moving")
 is_on_from_start = false
@@ -112,7 +115,7 @@ transform = Transform3D(0.997099, 0, 0.0761099, 0, 1, 0, -0.0761099, 0, 0.997099
 target = NodePath("../moving_object_path")
 
 [node name="button2" parent="World" node_paths=PackedStringArray("target") instance=ExtResource("12_kk8bf")]
-transform = Transform3D(0.999991, 0, 0.00434586, 0, 1, 0, -0.00434586, 0, 0.999991, -24.4126, 2.64299, 20.149)
+transform = Transform3D(0.999991, 0, 0.00434586, 0, 1, 0, -0.00434586, 0, 0.999991, -1.38431, 1.5273, 5.9043)
 target = NodePath("../door")
 
 [node name="door" parent="World" instance=ExtResource("13_2py5d")]
@@ -120,6 +123,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.06
 look_at_door_when_opens = true
 
 [node name="player_kill_volume" parent="World" instance=ExtResource("14_6of3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0851936, -10.0392, 0.0201683)
 
 [node name="checkpoint" parent="World" instance=ExtResource("15_4nog2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.4348, 2.80471, 17.9167)
@@ -198,6 +202,9 @@ transform = Transform3D(1.56209, -1.37982, 1.71508, 1.97375, 1.80907, -0.342241,
 
 [node name="checkpoint3" parent="World" instance=ExtResource("15_4nog2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.8064, 2.34496, -5.9453)
+
+[node name="platform-falling2" parent="World" instance=ExtResource("19_gahlw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97821, 0.942237, 10.0673)
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.422618, -0.694272, 0.582563, 0, 0.642788, 0.766044, -0.906308, 0.323744, -0.271654, 0, 0, 0)
@@ -350,6 +357,9 @@ transform = Transform3D(-0.0145717, -1.91654, 0.178295, 0.767478, 0.157728, 1.75
 
 [node name="fence-straight2" parent="fence-straight2" instance=ExtResource("29_hhcav")]
 transform = Transform3D(0.878546, -0.845643, 0.376098, 0.845833, 0.94412, 0.146997, -0.375669, 0.148087, 1.21052, 0.942707, 0.325933, -0.302974)
+
+[node name="platform-falling" parent="." instance=ExtResource("18_x8jhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.65126, -0.0391998, 8.43993)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
