@@ -2218,7 +2218,7 @@ transform = Transform3D(-0.0976985, 4.50722, -2.84471, -5.31544, 0.126768, 0.383
 transform = Transform3D(0.0483462, 2.4674, -0.897774, -3.19717, 0.0405367, -1.12256e-09, 0.0142153, 0.725494, 3.05332, -30.8464, 57.1619, -127.479)
 
 [node name="pipe-half-section4" parent="." instance=ExtResource("35_8x3f4")]
-transform = Transform3D(2.31962, 0, 10.3738, 0, 27.2423, 0, -11.086, 0, 2.1706, -37.8603, 37.0796, -123.115)
+transform = Transform3D(1.87502, 0, 9.04565, 0, 25.419, 0, -8.96116, 0, 1.8927, -37.955, 37.6978, -123.026)
 
 [node name="stones14" parent="." instance=ExtResource("89_jx0xp")]
 transform = Transform3D(-0.00608451, 6.20035, -2.70419, -6.74266, -0.222097, -0.494067, -0.541657, 2.69506, 6.18063, -26.7459, 34.0743, -100.374)
@@ -2249,6 +2249,12 @@ transform = Transform3D(-2.02877, 1.49586, 6.83561, 6.98737, 0.0523093, 2.06236,
 
 [node name="cube18" parent="." instance=ExtResource("87_5q7pd")]
 transform = Transform3D(-3.24499, 1.04234, -0.744264, 0.236562, 2.48011, 2.44204, 1.25876, 2.22103, -2.3776, -32.7808, 18.5082, -39.0683)
+
+[node name="shape-hollow-cylinder-detailed3" parent="." instance=ExtResource("38_18usl")]
+transform = Transform3D(1, 0, 0, 0, 3.09512, 0, 0, 0, 1, -30.115, 52.4655, -125.683)
+
+[node name="block-grass-corner-overhang-low9" parent="." instance=ExtResource("26_t6by5")]
+transform = Transform3D(2.71733, 0, -0.4823, 0, 1.80512, 0, 1.13368, 0, 1.15604, -29.9585, 51.8345, -125.518)
 
 [connection signal="coin_collected" from="Player" to="HUD" method="_on_coin_collected"]
 [connection signal="reached_goal" from="Player" to="HUD" method="_on_player_reached_goal"]
