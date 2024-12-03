@@ -45,13 +45,9 @@ func _on_coin_collected(coins):
 	coins_label.text = str(coins)
 
 func _on_player_reached_goal() -> void:
-	original_blur = environment.camera_attributes.get("dof_blur_far_enabled")
-	original_blur_distance = environment.camera_attributes.get("dof_blur_far_distance")
-	original_blur_amount = environment.camera_attributes.get("dof_blur_amount")
 	
-	environment.camera_attributes.set("dof_blur_far_enabled", true)
-	environment.camera_attributes.set("dof_blur_far_distance", 0.0)
-	environment.camera_attributes.set("dof_blur_amount", 0.1)
+	
+	
 	level_complete.visible = true
 	play_again_button.visible = true
 	if speed_run:
@@ -60,9 +56,7 @@ func _on_player_reached_goal() -> void:
 
 
 func _on_play_again_button_pressed() -> void:
-	environment.camera_attributes.set("dof_blur_far_enabled", original_blur)
-	environment.camera_attributes.set("dof_blur_far_distance", original_blur_distance)
-	environment.camera_attributes.set("dof_blur_amount", original_blur_amount)
+	
 
 	get_tree().paused = false
 	play_again_button.visible = false
